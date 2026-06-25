@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  text-align: center;
+}
+
+main h1 {
+  margin-bottom: 10px;
+}
+
+.expense-input {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.expense-input label {
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.expense-input input {
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-row label {
+  width: 80px;
+  text-align: right;
+}
+
+.input-row input {
+  width: 250px;
+  padding: 8px;
+}
+
+.logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
