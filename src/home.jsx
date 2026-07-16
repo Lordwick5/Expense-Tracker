@@ -151,8 +151,9 @@ function Home() {
             <label htmlFor="amount">Amount</label>
             <input
               id="amount"
-              type="number"
+              type="text"
               inputMode="numeric"
+              pattern="[0-9]*"
               placeholder="Enter your amount"
               required
               value={amount}
