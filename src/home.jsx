@@ -38,7 +38,8 @@ function Home() {
       }
 
       const result = await response.json();
-      setExpenses(result.expenses);
+      console.log("expenses API response:", result);
+      setExpenses(Array.isArray(result) ? result : []);
     } catch (err) {
       console.error("Fetch expenses error:", err);
       setErrorMessage("Could not load expenses.");
