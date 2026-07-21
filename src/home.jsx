@@ -38,7 +38,6 @@ function Home() {
       }
 
       const result = await response.json();
-      console.log("expenses API response:", result);
       setExpenses(Array.isArray(result) ? result : []);
     } catch (err) {
       console.error("Fetch expenses error:", err);
@@ -74,7 +73,7 @@ function Home() {
       const response = await fetch(url, {
         method,
         headers: authHeaders,
-        body: JSON.stringify({ item, amount }),
+        body: JSON.stringify({ item, amount: Number(amount) }),
       });
 
       if (!response.ok) {
@@ -153,14 +152,13 @@ function Home() {
             <input
               id="amount"
               type="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
+              inputMode="decimal"
               placeholder="Enter your amount"
               required
               value={amount}
               onChange={(e) => {
                 const value = e.target.value;
-                if (/^\d*$/.test(value)) {
+                if (/^\d*\.?\d*$/.test(value)) {
                   setAmount(value);
                 }
               }}
