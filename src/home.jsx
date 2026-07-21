@@ -158,7 +158,7 @@ function Home() {
               value={amount}
               onChange={(e) => {
                 const value = e.target.value;
-                if (/^\d*\.?\d*$/.test(value)) {
+                if (/^\d*\.?\d{0,4}$/.test(value)) {
                   setAmount(value);
                 }
               }}
